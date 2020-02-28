@@ -1,9 +1,13 @@
 const express = require('express');
 const socket = require('socket.io');
+const dotenv = require('dotenv');
+
+dotenv.config({ path: './config.env' });
+const port = process.env.PORT || 4000;
 
 const app = express();
 
-const server = app.listen(4000, () => {
+const server = app.listen(port, () => {
     console.log("Listening to request on port 4000");
 });
 
